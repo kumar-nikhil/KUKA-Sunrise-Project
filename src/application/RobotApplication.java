@@ -38,7 +38,7 @@ public class RobotApplication extends RoboticsAPIApplication {
 		// initialize your application here
 		controller = getController("KUKA_Sunrise_Cabinet_1");
 		robot = (LBR) getDevice(controller,
-				"robot");
+				"LBR_iiwa_14_R820_1");
 		gripper = new Nikhil_ioIOGroup(controller);
 		
 		
