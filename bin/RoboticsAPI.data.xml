@@ -2,5 +2,29 @@
 <RoboticsAPIData version="3">
     <world>
         <gravitation x="0.0" y="0.0" z="9.81"/>
+        <frame id="_93533494-2c39-4bdb-9193-60d2fa158b5a" name="P1">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1505902591635"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_cc15dccb-6518-419b-ae81-310f3ab950b0" name="P2">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1505902595920"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_a2558e4d-2f6b-467f-878a-7dda11e7fad9" name="P3">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1505902598640"/>
+            </additionalInformation>
+        </frame>
+        <frame id="_8eddd64b-d5e9-4b76-b4e0-7c697c4f7227" name="P4">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1505902601966"/>
+            </additionalInformation>
+        </frame>
     </world>
 </RoboticsAPIData>
