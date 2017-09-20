@@ -4,7 +4,11 @@ package application;
 import javax.inject.Inject;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
+
+import com.kuka.roboticsAPI.controllerModel.Controller;
 import com.kuka.roboticsAPI.deviceModel.LBR;
+import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
+import com.kuka.generated.ioAccess.*;
 
 /**
  * Implementation of a robot application.
@@ -26,16 +30,31 @@ import com.kuka.roboticsAPI.deviceModel.LBR;
  */
 public class RobotApplication extends RoboticsAPIApplication {
 	@Inject
-	private LBR lBR_iiwa_14_R820_1;
-
+	private LBR robot;
+	private Controller controller;
+	private Nikhil_ioIOGroup gripper;
 	@Override
 	public void initialize() {
 		// initialize your application here
+		controller = getController("KUKA_Sunrise_Cabinet_1");
+		robot = (LBR) getDevice(controller,
+				"robot");
+		gripper = new Nikhil_ioIOGroup(controller);
+		
+		
 	}
 
 	@Override
 	public void run() {
 		// your application execution starts here
-		lBR_iiwa_14_R820_1.move(ptpHome());
-	}
+		robot.move(ptpHome());
+		int decision = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION,"Do you want to switch to gripper?", "Yes", "No");
+		if(decision == 0){
+		gripper.setGripper_open(true);
+		}
+		else return;
+		}
+	
+	
+	
 }
