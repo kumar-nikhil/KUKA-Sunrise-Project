@@ -48,11 +48,15 @@ public class RobotApplication extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		robot.move(ptpHome());
+		gripper.setGripper_open(false);
 		int decision = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION,"Do you want to switch to gripper?", "Yes", "No");
 		if(decision == 0){
 		gripper.setGripper_open(true);
 		}
-		else return;
+		else {
+			gripper.setGripper_open(false);
+			return;
+		}
 		}
 	
 	
