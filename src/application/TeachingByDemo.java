@@ -61,7 +61,7 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 	
 	private void teaching(){
 		CartesianImpedanceControlMode mode = new CartesianImpedanceControlMode();
-		mode.parametrize(CartDOF.ALL).setStiffness(10);
+		mode.parametrize(CartDOF.ALL).setStiffness(80);
 		mode.parametrize(CartDOF.ROT).setStiffness(10);
 		
 		double blending = /*getApplicationData().getProcessData("blending").getValue()*/ 0.2;
@@ -71,8 +71,8 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 		JointTorqueCondition fc = new JointTorqueCondition(JointEnum.J1, -15, 15);
 		
 		//lbr.move(ptp(0, Math.toRadians(25), 0, Math.toRadians(-85), 0, Math.toRadians(70), 0).setJointVelocityRel(.3).setJointAccelerationRel(.5));
-		lbr.move(ptp(getApplicationData().getFrame("/start")));
-		lbr.move(positionHold(new PositionControlMode(), -1, TimeUnit.SECONDS).breakWhen(fc));
+		lbr.move(ptp(getApplicationData().getFrame("/start")).setJointVelocityRel(0.3).setJointAccelerationRel(0.5));
+		lbr.move(positionHold(new PositionControlMode(), 1, TimeUnit.SECONDS).breakWhen(fc));
 		
 		int time = /*getApplicationData().getProcessData("time").getValue()*/ 2;
 		
@@ -92,9 +92,9 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 		while (sel !=1){
 			lbr.move(ptp(positions.get(0)).setJointVelocityRel(.3));
 			
-			double velo = getApplicationData().getProcessData("velo").getValue();
-			double acce = getApplicationData().getProcessData("acce").getValue();
-			double jerk = getApplicationData().getProcessData("jerk").getValue();
+			double velo = /*getApplicationData().getProcessData("velo").getValue()*/ 0.25;
+			double acce = /*getApplicationData().getProcessData("acce").getValue()*/ 0.2;
+			double jerk = /*getApplicationData().getProcessData("jerk").getValue()*/ 0.1;
 			
 			for(int i = 1; i < positions.size(); i++){
 				lbr.moveAsync(ptp(positions.get(i)).setBlendingRel(blending).setJointVelocityRel(velo).setJointJerkRel(jerk).setJointAccelerationRel(acce));
