@@ -87,7 +87,7 @@ public class MoveCartesian extends RoboticsAPIApplication {
 	
 	private ICondition defineSensitivity() {
 		//double threshold = getApplicationData().getProcessData("threshold").getValue();
-		int threshold = 15;
+		int threshold = 10;
 		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
 		
 		
