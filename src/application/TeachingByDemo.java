@@ -61,7 +61,7 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 	
 	private void teaching(){
 		CartesianImpedanceControlMode mode = new CartesianImpedanceControlMode();
-		mode.parametrize(CartDOF.ALL).setStiffness(80);
+		mode.parametrize(CartDOF.ALL).setStiffness(10);
 		mode.parametrize(CartDOF.ROT).setStiffness(10);
 		
 		double blending = /*getApplicationData().getProcessData("blending").getValue()*/ 0.2;
