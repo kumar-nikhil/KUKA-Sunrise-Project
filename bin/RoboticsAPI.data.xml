@@ -33,6 +33,36 @@
                     <info type="com.kuka.roboticsAPI.deviceModel.LBRE1Redundancy$E1Parameter" value="0.028159333265229607" valueType="java.lang.Double"/>
                 </redundancy>
             </redundancyData>
+            <frame id="_7c529837-f1a5-425b-8491-1826d74bcde7" name="P1">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1505985847620"/>
+                </additionalInformation>
+            </frame>
+            <frame id="_461d8727-8dad-4384-8711-3e44b24f3226" name="P2">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1505985851297"/>
+                </additionalInformation>
+            </frame>
+            <frame id="_8763e778-b4c4-4a92-b8d5-54635cf1fe08" name="P3">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1505985866421"/>
+                </additionalInformation>
+            </frame>
+            <frame id="_c67eba93-f4f7-4eb1-8584-1fe23b6ba0bc" name="P4">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1505985869735"/>
+                </additionalInformation>
+            </frame>
+            <frame id="_ff6acdce-a89c-42ca-b6ac-d4b44c3e0b89" name="P5">
+                <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+                <additionalInformation>
+                    <info key="LastModificationTime" type="java.lang.Long" value="1505985873010"/>
+                </additionalInformation>
+            </frame>
         </frame>
     </world>
 </RoboticsAPIData>
