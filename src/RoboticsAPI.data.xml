@@ -18,5 +18,11 @@
                 </redundancy>
             </redundancyData>
         </frame>
+        <frame id="_d69e99f6-95d7-4faa-b7ff-d8e2fb5f0ae9" name="start">
+            <transformation a="0.0" b="0.0" c="0.0" x="0.0" y="0.0" z="0.0"/>
+            <additionalInformation>
+                <info key="LastModificationTime" type="java.lang.Long" value="1505978916445"/>
+            </additionalInformation>
+        </frame>
     </world>
 </RoboticsAPIData>
