@@ -70,11 +70,11 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 		
 		JointTorqueCondition fc = new JointTorqueCondition(JointEnum.J1, -15, 15);
 		
-		lbr.move(ptp(0, Math.toRadians(25), 0, Math.toRadians(-85), 0, Math.toRadians(70), 0).setJointVelocityRel(.3).setJointAccelerationRel(.5));
-		
+		//lbr.move(ptp(0, Math.toRadians(25), 0, Math.toRadians(-85), 0, Math.toRadians(70), 0).setJointVelocityRel(.3).setJointAccelerationRel(.5));
+		lbr.move(ptp(getApplicationData().getFrame("/start")));
 		lbr.move(positionHold(new PositionControlMode(), -1, TimeUnit.SECONDS).breakWhen(fc));
 		
-		int time = getApplicationData().getProcessData("time").getValue();
+		int time = /*getApplicationData().getProcessData("time").getValue()*/ 2;
 		
 		IMotionContainer posHold = lbr.moveAsync(positionHold(mode, time, TimeUnit.SECONDS));
 		
