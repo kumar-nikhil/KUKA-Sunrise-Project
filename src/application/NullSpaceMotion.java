@@ -54,6 +54,7 @@ public class NullSpaceMotion extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		//lBR_iiwa_14_R820_1.move(ptpHome());
+		moveNullspace(2);
 	}
 	
 	private void moveNullspace(int runs) {
