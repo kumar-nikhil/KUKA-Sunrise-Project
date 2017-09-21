@@ -102,10 +102,10 @@ public class CompliantMode extends RoboticsAPIApplication {
 
 				answer = getApplicationUI().displayModalDialog(
 						ApplicationDialogType.INFORMATION,
-						"Steifigkeit in X: " + stiffX
-								+ " N/m\nSteifigkeit in Y: " + stiffY
-								+ " N/m\nSteifigkeit in Z: " + stiffZ + " N/m",
-						"zur Startposition fahren und Ende", "Weich", "Mittel", "Hart");
+						"rigidity in X: " + stiffX
+								+ " N/m\nrigidity in Y: " + stiffY
+								+ " N/m\nrigidity in Z: " + stiffZ + " N/m",
+						"To start position and end", "Soft", "Medium", "Hard");
 				handle.cancel();
 				lbr.move(ptp(getFrame("/start")).setJointVelocityRel(0.3));
 		} while (answer != 0);
