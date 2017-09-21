@@ -128,8 +128,8 @@ public class MoveCartesian extends RoboticsAPIApplication {
 		handle = lbr.moveAsync(positionHold(soft, -1, TimeUnit.SECONDS));
 		sel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION,
 			"Collision detected, Robot is in Impedance Control",
-			"Continue Motion",
-			"Main Menu  ");
+			"Continue Motion"
+			);
 		handle.cancel();
 		if (sel != 0) {
 			resumeMotion = false;
