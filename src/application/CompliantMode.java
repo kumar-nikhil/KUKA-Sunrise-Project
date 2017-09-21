@@ -64,7 +64,7 @@ public class CompliantMode extends RoboticsAPIApplication {
 
 		double highStiff = /*getApplicationData().getProcessData("highStiff").getValue()*/ 2500;
 		double midStiff = /*getApplicationData().getProcessData("midStiff").getValue()*/ 1000;
-		double lowStiff = /*getApplicationData().getProcessData("lowStiff").getValue()*/2000;
+		double lowStiff = /*getApplicationData().getProcessData("lowStiff").getValue()*/500;
 
 		
 		lbr.move(ptp(getFrame("/start")).setJointVelocityRel(0.3));
