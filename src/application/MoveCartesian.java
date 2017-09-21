@@ -86,8 +86,10 @@ public class MoveCartesian extends RoboticsAPIApplication {
 	}
 	
 	private ICondition defineSensitivity() {
-		double sensCLS = getApplicationData().getProcessData("sensCLS").getValue();
-		getLogger().info("Sensitivity of each axis: " +sensCLS + " Nm\nCan be changed in Process data.");
+		//double threshold = getApplicationData().getProcessData("threshold").getValue();
+		int threshold = 15;
+		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
+		
 		
 		//Offsetkompensation
 		double actTJ1 = lbr.getExternalTorque().getSingleTorqueValue(JointEnum.J1);
@@ -101,13 +103,13 @@ public class MoveCartesian extends RoboticsAPIApplication {
 		getLogger().info("Offsetwerte\nJ1 " + actTJ1 + "Nm\nJ2 " + actTJ2 + "Nm\nJ3 " + actTJ3 + "Nm\nJ4 " + actTJ4 + "Nm\nJ5 " + actTJ5 + "Nm\nJ6 " + actTJ6 + "Nm\nJ7 " + actTJ7 + "Nm");
 		
 		//Abbruchbedingungen pro Achse
-		JointTorqueCondition jt1 = new JointTorqueCondition(JointEnum.J1, -sensCLS+actTJ1, sensCLS+actTJ1);
-		JointTorqueCondition jt2 = new JointTorqueCondition(JointEnum.J2, -sensCLS+actTJ2, sensCLS+actTJ2);
-		JointTorqueCondition jt3 = new JointTorqueCondition(JointEnum.J3, -sensCLS+actTJ3, sensCLS+actTJ3);
-		JointTorqueCondition jt4 = new JointTorqueCondition(JointEnum.J4, -sensCLS+actTJ4, sensCLS+actTJ4);
-		JointTorqueCondition jt5 = new JointTorqueCondition(JointEnum.J5, -sensCLS+actTJ5, sensCLS+actTJ5);
-		JointTorqueCondition jt6 = new JointTorqueCondition(JointEnum.J6, -sensCLS+actTJ6, sensCLS+actTJ6);
-		JointTorqueCondition jt7 = new JointTorqueCondition(JointEnum.J7, -sensCLS+actTJ7, sensCLS+actTJ7);
+		JointTorqueCondition jt1 = new JointTorqueCondition(JointEnum.J1, -threshold+actTJ1, threshold+actTJ1);
+		JointTorqueCondition jt2 = new JointTorqueCondition(JointEnum.J2, -threshold+actTJ2, threshold+actTJ2);
+		JointTorqueCondition jt3 = new JointTorqueCondition(JointEnum.J3, -threshold+actTJ3, threshold+actTJ3);
+		JointTorqueCondition jt4 = new JointTorqueCondition(JointEnum.J4, -threshold+actTJ4, threshold+actTJ4);
+		JointTorqueCondition jt5 = new JointTorqueCondition(JointEnum.J5, -threshold+actTJ5, threshold+actTJ5);
+		JointTorqueCondition jt6 = new JointTorqueCondition(JointEnum.J6, -threshold+actTJ6, threshold+actTJ6);
+		JointTorqueCondition jt7 = new JointTorqueCondition(JointEnum.J7, -threshold+actTJ7, threshold+actTJ7);
 
 		ICondition forceCon = jt1.or(jt2, jt3, jt4, jt5, jt6, jt7);
 		return forceCon;
