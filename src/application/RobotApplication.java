@@ -50,9 +50,14 @@ public class RobotApplication extends RoboticsAPIApplication {
 		// your application execution starts here
 		robot.move(ptpHome());
 		gripper.setGripper_open(false);
-		int decision = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION,"Do you want to switch to gripper?", "Yes", "No");
+		int decision = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION,"Do you want to switch to hand guiding?", "Yes", "No");
 		if(decision == 0){
-		gripper.setGripper_open(true);
+			int ok =1;
+		//gripper.setGripper_open(true);
+			while(ok==1){
+			robot.move(handGuiding());
+			ok = getApplicationUI().displayModalDialog(ApplicationDialogType.INFORMATION,"Press OK to end hand guiding!", "OK");
+			}return;
 		}
 		else {
 			gripper.setGripper_open(false);
