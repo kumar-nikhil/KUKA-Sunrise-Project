@@ -9,6 +9,7 @@ import com.kuka.roboticsAPI.controllerModel.Controller;
 import com.kuka.roboticsAPI.deviceModel.LBR;
 import com.kuka.roboticsAPI.uiModel.ApplicationDialogType;
 import com.kuka.generated.ioAccess.*;
+import static com.kuka.roboticsAPI.motionModel.HRCMotions.*;
 
 /**
  * Implementation of a robot application.
@@ -55,6 +56,7 @@ public class RobotApplication extends RoboticsAPIApplication {
 		}
 		else {
 			gripper.setGripper_open(false);
+			
 			return;
 		}
 		}
