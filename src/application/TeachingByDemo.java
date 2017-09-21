@@ -74,7 +74,7 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 		lbr.move(ptp(getApplicationData().getFrame("/start")).setJointVelocityRel(0.3).setJointAccelerationRel(0.5));
 		lbr.move(positionHold(new PositionControlMode(), 1, TimeUnit.SECONDS).breakWhen(fc));
 		
-		int time = /*getApplicationData().getProcessData("time").getValue()*/ 2;
+		int time = /*getApplicationData().getProcessData("time").getValue()*/ 20;
 		
 		IMotionContainer posHold = lbr.moveAsync(positionHold(mode, time, TimeUnit.SECONDS));
 		

@@ -15,9 +15,9 @@ public class Impedance extends RoboticsAPIApplication {
 
 	final static double offsetAxis2And4=Math.toRadians(10);
 
-	private static final int stiffnessZ = 500;
-	private static final int stiffnessY = 200;
-	private static final int stiffnessX = 500;
+	private static final int stiffnessZ = 2500;
+	private static final int stiffnessY = 700;
+	private static final int stiffnessX = 1500;
 	private LBR lbr;
 	private static double[] startPosition=new double[]{0,offsetAxis2And4,0,offsetAxis2And4-Math.toRadians(90),0,Math.toRadians(90),0};
 	private final static String informationText=
@@ -44,7 +44,7 @@ public class Impedance extends RoboticsAPIApplication {
 		getLogger().info("Move to start position");
 		PTP ptpToStartPosition = ptp(startPosition);
 		ptpToStartPosition.setJointVelocityRel(0.25);
-		lbr.move(ptp(getApplicationData().getFrame("/P1")));
+		lbr.move(ptpToStartPosition);
 
 		getLogger().info("Hold position in impedance control mode");
 		CartesianImpedanceControlMode impedanceControlMode = 	new CartesianImpedanceControlMode();

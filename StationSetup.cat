@@ -81,6 +81,7 @@
             <SoftwareItem autoSelected="true" canChangeSelection="false" displayName="RAPICommon" installItem="true" installedVersion="1.0.0" itemPath="com.kuka/RAPICommon" selectedVersion="1.0.0" usage="Feature"/>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="General safety settings" installItem="true" installedVersion="1" itemPath="com.kuka/SafetyBasic" selectedVersion="1" usage="Library"/>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="SafetyDiagnose" installItem="true" installedVersion="1" itemPath="com.kuka/SafetyDiagnose" selectedVersion="1" usage="Feature"/>
+            <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="Human Robot Collaboration" installItem="true" installedVersion="1" itemPath="com.kuka/SafetyHRC" selectedVersion="1" usage="Feature"/>
             <SoftwareItem autoSelected="true" canChangeSelection="true" displayName="smartHMI" installItem="true" installedVersion="1" itemPath="com.kuka/SmartHMI" selectedVersion="1" usage="Feature">
                 <PropertyGroup displayName="Calibration" key="Measurement" showInEditor="true">
                     <Property displayName="Minimum calibration point distance (tool) in mm" key="measurementMinFrameDistanceTool" regex="^((?:\d{1,2}|1\d{2})((\.)\d{1,9})?|200((\.)0{1,9})?)$" showInEditor="true" type="Double">
