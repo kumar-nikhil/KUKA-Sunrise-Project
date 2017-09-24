@@ -542,6 +542,7 @@ public class Nikhil_ioIOGroup extends AbstractIOGroup
 		setDigitalOutput(output, true);
 		ThreadUtil.milliSleep(time);
 		setDigitalOutput(output, false);
+		ThreadUtil.milliSleep(time);
 	}
 
 }
