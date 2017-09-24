@@ -14,6 +14,7 @@ import com.kuka.roboticsAPI.deviceModel.JointEnum;
 import com.kuka.roboticsAPI.deviceModel.LBR;
 import com.kuka.roboticsAPI.geometricModel.Frame;
 import com.kuka.roboticsAPI.motionModel.MotionBatch;
+import com.kuka.roboticsAPI.motionModel.Spline;
 import com.kuka.generated.ioAccess.Nikhil_ioIOGroup;
 
 
@@ -74,8 +75,12 @@ public class SearchGlass extends RoboticsAPIApplication {
 			Frame curPos = lbr.getCurrentCartesianPosition(lbr.getFlange());
 			Frame newPos = curPos.setY(curPosY-i); 
 			//lbr.move(lin(lbr.getCurrentCartesianPosition(lbr.getFlange().getY()+ curPosY)));
-			lbr.moveAsync(lin(newPos).setCartVelocity(200).breakWhen(found));
+			//lbr.moveAsync(lin(newPos).setCartVelocity(10).breakWhen(found));
+			Spline spl = new Spline(
+					lin(newPos)
+					);
 			
+			lbr.move(spl.breakWhen(found));
 			
 		}
 		
