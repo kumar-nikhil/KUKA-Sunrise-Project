@@ -61,13 +61,13 @@ public class SearchGlass extends RoboticsAPIApplication {
 	
 	public void searchRoutine(){
 		lbr.move(ptp(getApplicationData().getFrame("/start")));
-		ICondition hold = defineSensitivity(10);
+		ICondition hold = defineSensitivity(0.5);
 		MotionBatch cart = new MotionBatch(
 				ptp(getApplicationData().getFrame("/AppGlass1")),
 				lin(getApplicationData().getFrame("/AppGlass2"))
 				).breakWhen(hold);
 		lbr.move(cart);
-		ICondition found = defineSensitivity(2);
+		ICondition found = defineSensitivity(1);
 		double yMax = 35.0;
 		for(int i=0;i<yMax;i++){
 			double curPosY = lbr.getCurrentCartesianPosition(lbr.getFlange()).getY();
@@ -84,9 +84,9 @@ public class SearchGlass extends RoboticsAPIApplication {
 		
 	}
 	
-	private ICondition defineSensitivity(int thresh) {
+	private ICondition defineSensitivity(double thresh) {
 		//double threshold = getApplicationData().getProcessData("threshold").getValue();
-		int threshold = thresh;
+		double threshold = thresh;
 		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
 		
 		
