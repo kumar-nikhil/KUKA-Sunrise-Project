@@ -67,14 +67,14 @@ public class SearchGlass extends RoboticsAPIApplication {
 				lin(getApplicationData().getFrame("/AppGlass2"))
 				).breakWhen(hold);
 		lbr.move(cart);
-		ICondition found = defineSensitivity(1);
+		ICondition found = defineSensitivity(0.5);
 		double yMax = 350.0;
-		for(int i=0;i<yMax;i++){
+		for(int i=0;i<yMax;i=i+10){
 			double curPosY = lbr.getCurrentCartesianPosition(lbr.getFlange()).getY();
 			Frame curPos = lbr.getCurrentCartesianPosition(lbr.getFlange());
 			Frame newPos = curPos.setY(curPosY-i); 
 			//lbr.move(lin(lbr.getCurrentCartesianPosition(lbr.getFlange().getY()+ curPosY)));
-			lbr.moveAsync(lin(newPos).breakWhen(found));
+			lbr.moveAsync(lin(newPos).setCartVelocity(0.3).breakWhen(found));
 			
 			
 		}
