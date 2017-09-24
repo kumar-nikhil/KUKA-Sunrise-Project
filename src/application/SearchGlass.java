@@ -68,7 +68,7 @@ public class SearchGlass extends RoboticsAPIApplication {
 				).breakWhen(hold);
 		lbr.move(cart);
 		ICondition found = defineSensitivity(1);
-		double yMax = 35.0;
+		double yMax = 350.0;
 		for(int i=0;i<yMax;i++){
 			double curPosY = lbr.getCurrentCartesianPosition(lbr.getFlange()).getY();
 			Frame curPos = lbr.getCurrentCartesianPosition(lbr.getFlange());
