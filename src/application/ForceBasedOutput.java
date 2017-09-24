@@ -86,7 +86,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 			}*/
 		}
 		
-		while(lbr.equals(getFrame("/start"))){
+		while(true){
 			motion= lbr.move(cart);
 			if(motion.hasFired(OutputCon)){
 				getLogger().info("Leaving Glass");
@@ -188,7 +188,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 	
 	private boolean leaveGlass(){
 		IMotionContainer handle;
-		boolean resumeMotion = true;
+		boolean resumeMotion = false;
 		int sel = 5;
 		
 		CartesianImpedanceControlMode soft = new CartesianImpedanceControlMode();
@@ -204,7 +204,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		handle.cancel();
 		if(sel != 0)
 		{
-			resumeMotion = false;
+			resumeMotion = true;
 			lbr.move(ptp(getFrame("/start/P1")).setJointVelocityRel(.3));
 
 		}
