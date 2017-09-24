@@ -4,6 +4,8 @@ package application;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
+
+import com.kuka.generated.ioAccess.Nikhil_ioIOGroup;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
 
@@ -41,6 +43,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 	@Inject
 	private LBR lbr;
 	private Controller cabinet;
+	private Nikhil_ioIOGroup outputControl;
 
 	@Override
 	public void initialize() {
@@ -48,6 +51,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		cabinet = getController("KUKA_Sunrise_Cabinet_1");
 		lbr = (LBR) getDevice(cabinet,
 				"LBR_iiwa_14_R820_1");
+		outputControl = new Nikhil_ioIOGroup(cabinet);
 	}
 
 	@Override
@@ -203,7 +207,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 			soft.parametrize(CartDOF.ALL).setDamping(.7);
 			soft.parametrize(CartDOF.ROT).setStiffness(100);
 			soft.parametrize(CartDOF.TRANSL).setStiffness(600);
-		
+		outputControl.pulse("OUT3", true, 1000);
 		handle = lbr.moveAsync(positionHold(soft,-1,TimeUnit.SECONDS));
 		sel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION,
 				"hold glass!, Robot is in Impedance Control",
@@ -214,6 +218,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		{
 			resumeMotion = true;
 			lbr.move(ptp(getFrame("/start/P1")).setJointVelocityRel(.3));
+			
 
 		}
 		return resumeMotion;
