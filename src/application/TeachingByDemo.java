@@ -73,7 +73,8 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 		//lbr.move(ptp(0, Math.toRadians(25), 0, Math.toRadians(-85), 0, Math.toRadians(70), 0).setJointVelocityRel(.3).setJointAccelerationRel(.5));
 		lbr.move(ptp(getApplicationData().getFrame("/start")).setJointVelocityRel(0.3).setJointAccelerationRel(0.5));
 		lbr.move(positionHold(new PositionControlMode(), 1, TimeUnit.SECONDS).breakWhen(fc));
-		
+		String startDialog = "Move Robot To Teach Points!";
+		getLogger().info(startDialog);
 		int time = /*getApplicationData().getProcessData("time").getValue()*/ 20;
 		
 		IMotionContainer posHold = lbr.moveAsync(positionHold(mode, time, TimeUnit.SECONDS));
