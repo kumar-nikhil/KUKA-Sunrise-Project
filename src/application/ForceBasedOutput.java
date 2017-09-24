@@ -86,7 +86,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 			}*/
 		}
 		
-		/*while(lbr.equals(getFrame("/start"))){
+		while(lbr.equals(getFrame("/start"))){
 			motion= lbr.move(cart);
 			if(motion.hasFired(OutputCon)){
 				getLogger().info("Leaving Glass");
@@ -94,7 +94,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 				if(!resumeMotion) break;
 			
 				
-			}*/
+			}}
 			//motion = lbr.move(cart);
 			
 			
@@ -133,7 +133,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 	
 	private ICondition defineOutputSensitivity() {
 		//double threshold = getApplicationData().getProcessData("threshold").getValue();
-		int threshold = 5;
+		int threshold = 30;
 		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
 		
 		
@@ -189,7 +189,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 	private boolean leaveGlass(){
 		IMotionContainer handle;
 		boolean resumeMotion = true;
-		int sel = 10;
+		int sel = 5;
 		
 		CartesianImpedanceControlMode soft = new CartesianImpedanceControlMode();
 			soft.parametrize(CartDOF.ALL).setDamping(.7);
