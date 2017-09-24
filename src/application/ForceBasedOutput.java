@@ -13,6 +13,7 @@ import com.kuka.roboticsAPI.controllerModel.Controller;
 import com.kuka.roboticsAPI.deviceModel.JointEnum;
 import com.kuka.roboticsAPI.deviceModel.LBR;
 import com.kuka.roboticsAPI.geometricModel.CartDOF;
+import com.kuka.roboticsAPI.motionModel.IMotion;
 import com.kuka.roboticsAPI.motionModel.IMotionContainer;
 import com.kuka.roboticsAPI.motionModel.MotionBatch;
 import com.kuka.roboticsAPI.motionModel.controlModeModel.CartesianImpedanceControlMode;
@@ -87,7 +88,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		}
 		
 		while(true){
-			motion= lbr.move(cart);
+			motion= lbr.move((IMotion) getFrame("/start"));
 			if(motion.hasFired(OutputCon)){
 				getLogger().info("Leaving Glass");
 				boolean resumeMotion = leaveGlass();
