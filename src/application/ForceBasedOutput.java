@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 import javax.inject.Inject;
 
+import com.kuka.common.ThreadUtil;
 import com.kuka.generated.ioAccess.Nikhil_ioIOGroup;
 import com.kuka.roboticsAPI.applicationModel.RoboticsAPIApplication;
 import static com.kuka.roboticsAPI.motionModel.BasicMotions.*;
@@ -90,11 +91,11 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		for (int i = 0; i < runs; i++) {
 			motion = lbr.move(cart);
 			
-			/*if (motion.hasFired(forceCon)) {
+			if (motion.hasFired(forceCon)) {
 				//Reaktion auf Kollision
 				boolean resumeMotion = behaviourAfterCollision();
 				if (!resumeMotion) break;
-			}*/
+			}
 		}
 		
 		while(true){
@@ -116,7 +117,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 	
 	private ICondition defineSensitivity() {
 		//double threshold = getApplicationData().getProcessData("threshold").getValue();
-		int threshold = 100;
+		int threshold = 10;
 		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
 		
 		
@@ -209,6 +210,8 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 			soft.parametrize(CartDOF.ROT).setStiffness(100);
 			soft.parametrize(CartDOF.TRANSL).setStiffness(600);
 		outputControl.pulse("OUT3", true, 1000);
+		ThreadUtil.milliSleep(1000);
+		outputControl.pulse("OUT4", true, 1000);
 		handle = lbr.moveAsync(positionHold(soft,-1,TimeUnit.SECONDS));
 		sel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION,
 				"hold glass!, Robot is in Impedance Control",
