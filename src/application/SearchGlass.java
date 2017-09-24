@@ -60,7 +60,7 @@ public class SearchGlass extends RoboticsAPIApplication {
 	
 	public void searchRoutine(){
 		lbr.move(ptp(getApplicationData().getFrame("/start")));
-		ICondition hold = defineSensitivity(5);
+		ICondition hold = defineSensitivity(2);
 		MotionBatch cart = new MotionBatch(
 				ptp(getApplicationData().getFrame("/AppGlass1")),
 				lin(getApplicationData().getFrame("/AppGlass2"))
