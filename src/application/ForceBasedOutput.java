@@ -165,13 +165,13 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		//Abbruchbedingungen pro Achse
 		JointTorqueCondition jt1 = new JointTorqueCondition(JointEnum.J1, -threshold+actTJ1, threshold+actTJ1);
 		JointTorqueCondition jt2 = new JointTorqueCondition(JointEnum.J2, -threshold+actTJ2, threshold+actTJ2);
-		JointTorqueCondition jt3 = new JointTorqueCondition(JointEnum.J3, -threshold+actTJ3, threshold+actTJ3);
+		//JointTorqueCondition jt3 = new JointTorqueCondition(JointEnum.J3, -threshold+actTJ3, threshold+actTJ3);
 		JointTorqueCondition jt4 = new JointTorqueCondition(JointEnum.J4, -threshold+actTJ4, threshold+actTJ4);
-		JointTorqueCondition jt5 = new JointTorqueCondition(JointEnum.J5, -threshold+actTJ5, threshold+actTJ5);
+		//JointTorqueCondition jt5 = new JointTorqueCondition(JointEnum.J5, -threshold+actTJ5, threshold+actTJ5);
 		JointTorqueCondition jt6 = new JointTorqueCondition(JointEnum.J6, -threshold+actTJ6, threshold+actTJ6);
-		JointTorqueCondition jt7 = new JointTorqueCondition(JointEnum.J7, -threshold+actTJ7, threshold+actTJ7);
+		//JointTorqueCondition jt7 = new JointTorqueCondition(JointEnum.J7, -threshold+actTJ7, threshold+actTJ7);
 
-		ICondition OutputCon = jt1.or(jt2, jt3, jt4, jt5, jt6, jt7);
+		ICondition OutputCon = jt1.or(jt2, /*jt3,*/ jt4, /*jt5,*/ jt6 /*,jt7*/);
 		return OutputCon;
 	}
 	
