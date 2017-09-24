@@ -89,6 +89,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		
 		while(true){
 			motion= lbr.move((IMotion) getFrame("/start"));
+			getLogger().info("hold glass");
 			if(motion.hasFired(OutputCon)){
 				getLogger().info("Leaving Glass");
 				boolean resumeMotion = leaveGlass();
