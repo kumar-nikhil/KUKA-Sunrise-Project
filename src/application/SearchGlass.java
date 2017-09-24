@@ -12,6 +12,7 @@ import com.kuka.roboticsAPI.conditionModel.JointTorqueCondition;
 import com.kuka.roboticsAPI.controllerModel.Controller;
 import com.kuka.roboticsAPI.deviceModel.JointEnum;
 import com.kuka.roboticsAPI.deviceModel.LBR;
+import com.kuka.roboticsAPI.geometricModel.Frame;
 import com.kuka.roboticsAPI.motionModel.MotionBatch;
 import com.kuka.generated.ioAccess.Nikhil_ioIOGroup;
 
@@ -60,12 +61,21 @@ public class SearchGlass extends RoboticsAPIApplication {
 	
 	public void searchRoutine(){
 		lbr.move(ptp(getApplicationData().getFrame("/start")));
-		ICondition hold = defineSensitivity(2);
+		ICondition hold = defineSensitivity(10);
 		MotionBatch cart = new MotionBatch(
 				ptp(getApplicationData().getFrame("/AppGlass1")),
 				lin(getApplicationData().getFrame("/AppGlass2"))
 				).breakWhen(hold);
 		lbr.move(cart);
+		ICondition found = defineSensitivity(2);
+		double yMax = 35.0;
+		for(int i=0;i<yMax;i++){
+			Frame curPos = lbr.getCurrentCartesianPosition(lbr.getFlange()).setY(i);
+			lbr.move(lin(curPos).breakWhen(found));
+			
+			
+		}
+		
 		
 		
 		
