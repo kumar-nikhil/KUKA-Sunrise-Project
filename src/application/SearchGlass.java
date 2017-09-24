@@ -60,7 +60,7 @@ public class SearchGlass extends RoboticsAPIApplication {
 	
 	public void searchRoutine(){
 		lbr.move(ptp(getApplicationData().getFrame("/start")));
-		ICondition hold = defineSensitivity();
+		ICondition hold = defineSensitivity(5);
 		MotionBatch cart = new MotionBatch(
 				ptp(getApplicationData().getFrame("/AppGlass1")),
 				lin(getApplicationData().getFrame("/AppGlass2"))
@@ -71,9 +71,9 @@ public class SearchGlass extends RoboticsAPIApplication {
 		
 	}
 	
-	private ICondition defineSensitivity() {
+	private ICondition defineSensitivity(int thresh) {
 		//double threshold = getApplicationData().getProcessData("threshold").getValue();
-		int threshold = 1;
+		int threshold = thresh;
 		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
 		
 		
