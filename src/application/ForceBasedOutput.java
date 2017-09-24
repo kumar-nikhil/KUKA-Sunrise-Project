@@ -68,9 +68,9 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		MotionBatch cart = new MotionBatch(
 			lin(getFrame("/start")).setCartVelocity(100),
 			//linRel(-150, 0, 0).setCartVelocity(100),
-			lin(getFrame("/P1")).setCartVelocity(100),
+			lin(getFrame("/start/P1")).setCartVelocity(100),
 			//linRel(0, 150, 0).setCartVelocity(100),
-			lin(getFrame("/P2")).setCartVelocity(100),
+			lin(getFrame("/start/P2")).setCartVelocity(100),
 			//inRel(0, 0, 150).setCartVelocity(100),
 			lin(getFrame("/start")).setCartVelocity(100))
 		.breakWhen(forceCon);
@@ -205,7 +205,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		if(sel != 0)
 		{
 			resumeMotion = false;
-			lbr.move(ptp(getFrame("/P1")).setJointVelocityRel(.3));
+			lbr.move(ptp(getFrame("/start/P1")).setJointVelocityRel(.3));
 
 		}
 		return resumeMotion;
