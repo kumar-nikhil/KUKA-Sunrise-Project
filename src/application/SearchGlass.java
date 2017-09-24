@@ -74,7 +74,7 @@ public class SearchGlass extends RoboticsAPIApplication {
 			Frame curPos = lbr.getCurrentCartesianPosition(lbr.getFlange());
 			Frame newPos = curPos.setY(curPosY-i); 
 			//lbr.move(lin(lbr.getCurrentCartesianPosition(lbr.getFlange().getY()+ curPosY)));
-			lbr.moveAsync(lin(newPos).setCartVelocity(0.3).breakWhen(found));
+			lbr.moveAsync(lin(newPos).setCartVelocity(200).breakWhen(found));
 			
 			
 		}
