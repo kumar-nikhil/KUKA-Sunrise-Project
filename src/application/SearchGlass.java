@@ -84,7 +84,7 @@ public class SearchGlass extends RoboticsAPIApplication {
 			
 		}*/
 		
-		lbr.move(lin(getApplicationData().getFrame("/endSearch")).setCartVelocity(50).breakWhen(found));
+		lbr.move(lin(getApplicationData().getFrame("/endSearch")).setCartVelocity(25).breakWhen(found));
 		
 		
 		
