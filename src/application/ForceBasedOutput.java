@@ -79,14 +79,14 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		for (int i = 0; i < runs; i++) {
 			motion = lbr.move(cart);
 			
-			if (motion.hasFired(forceCon)) {
+			/*if (motion.hasFired(forceCon)) {
 				//Reaktion auf Kollision
 				boolean resumeMotion = behaviourAfterCollision();
 				if (!resumeMotion) break;
-			}
+			}*/
 		}
 		
-		while(lbr.equals(getFrame("/start"))){
+		/*while(lbr.equals(getFrame("/start"))){
 			motion= lbr.move(cart);
 			if(motion.hasFired(OutputCon)){
 				getLogger().info("Leaving Glass");
@@ -94,16 +94,16 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 				if(!resumeMotion) break;
 			
 				
-			}
+			}*/
 			//motion = lbr.move(cart);
 			
 			
 		}
-	}
+	
 	
 	private ICondition defineSensitivity() {
 		//double threshold = getApplicationData().getProcessData("threshold").getValue();
-		int threshold = 100;
+		int threshold = 5;
 		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
 		
 		
