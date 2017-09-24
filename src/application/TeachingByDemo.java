@@ -99,6 +99,7 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 			
 			for(int i = 1; i < positions.size(); i++){
 				lbr.moveAsync(ptp(positions.get(i)).setBlendingRel(blending).setJointVelocityRel(velo).setJointJerkRel(jerk).setJointAccelerationRel(acce));
+				getLogger().info(positions.get(i).toString());
 			}
 			sel = getApplicationUI().displayModalDialog(ApplicationDialogType.QUESTION, "Replay again?", "Replay!", "Close");
 		}
