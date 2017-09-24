@@ -41,7 +41,7 @@ public class BackgroundTask extends RoboticsAPICyclicBackgroundTask {
 	@Override
 	public void runCyclic() {
 		// your task execution starts here
-		boolean state = cyclic_out.getInput1();
+		//boolean state = cyclic_out.getInput1();
 		cyclic_out.pulse("OUT1", true, 500);
 		
 		
