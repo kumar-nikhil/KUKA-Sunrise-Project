@@ -76,6 +76,11 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 			lin(getFrame("/start")).setCartVelocity(100))
 		.breakWhen(forceCon);
 		
+		MotionBatch leaveGlass = new MotionBatch(
+				ptp(getFrame("/start")).setJointVelocityRel(0.23)
+				
+				).breakWhen(OutputCon);
+		
 		IMotionContainer motion;
 		for (int i = 0; i < runs; i++) {
 			motion = lbr.move(cart);
@@ -88,7 +93,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		}
 		
 		while(true){
-			motion= lbr.move(ptp(getApplicationData().getFrame("/start")));
+			motion= lbr.move(leaveGlass);
 			getLogger().info("hold glass");
 			if(motion.hasFired(OutputCon)){
 				getLogger().info("Leaving Glass");
