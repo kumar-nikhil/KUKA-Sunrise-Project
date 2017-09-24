@@ -86,7 +86,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 				).breakWhen(OutputCon);
 		
 		IMotionContainer motion;
-		IMotionContainer Hold;
+		//IMotionContainer Hold;
 		for (int i = 0; i < runs; i++) {
 			motion = lbr.move(cart);
 			
@@ -98,6 +98,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 		}
 		
 		while(true){
+			IMotionContainer Hold;
 			Hold= lbr.move(leaveGlass);
 			getLogger().info("hold glass");
 			if(Hold.hasFired(OutputCon)){
@@ -115,7 +116,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 	
 	private ICondition defineSensitivity() {
 		//double threshold = getApplicationData().getProcessData("threshold").getValue();
-		int threshold = 30;
+		int threshold = 100;
 		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
 		
 		
