@@ -140,7 +140,7 @@ public class ForceBasedOutput extends RoboticsAPIApplication {
 	
 	private ICondition defineOutputSensitivity() {
 		//double threshold = getApplicationData().getProcessData("threshold").getValue();
-		int threshold = 30;
+		int threshold = 5;
 		getLogger().info("Sensitivity of each axis: " +threshold + " Nm\nCan be changed in Process data.");
 		
 		
