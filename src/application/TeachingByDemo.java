@@ -103,5 +103,6 @@ public class TeachingByDemo extends RoboticsAPIApplication {
 		}
 				
 		lbr.move(ptp(positions.get(0)).setJointVelocityRel(.3));
+		
 	}
 }
