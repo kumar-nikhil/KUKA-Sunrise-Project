@@ -90,6 +90,7 @@ public class SearchGlass extends RoboticsAPIApplication {
 		
 		
 		
+		
 	}
 	
 	private ICondition defineSensitivity(double thresh) {
