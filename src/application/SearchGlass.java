@@ -57,6 +57,7 @@ public class SearchGlass extends RoboticsAPIApplication {
 	public void run() {
 		// your application execution starts here
 		//lBR_iiwa_14_R820_1.move(ptpHome());
+		// Search Bottle Routine
 		searchRoutine();
 	}
 	
