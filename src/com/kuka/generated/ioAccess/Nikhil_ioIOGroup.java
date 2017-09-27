@@ -1,14 +1,13 @@
 package com.kuka.generated.ioAccess;
 
-
-
 import javax.inject.Inject;
 import javax.inject.Singleton;
 
+import com.kuka.common.ThreadUtil;
 import com.kuka.roboticsAPI.controllerModel.Controller;
 import com.kuka.roboticsAPI.ioModel.AbstractIOGroup;
 import com.kuka.roboticsAPI.ioModel.IOTypes;
-import com.kuka.common.ThreadUtil;
+
 /**
  * Automatically generated class to abstract I/O access to I/O group <b>Nikhil_io</b>.<br>
  * <i>Please, do not modify!</i>
@@ -536,13 +535,15 @@ public class Nikhil_ioIOGroup extends AbstractIOGroup
 	{
 		setDigitalOutput("OUT6", value);
 	}
-	
-	public void pulse(String output , java.lang.Boolean value, long time)
-	{
-		setDigitalOutput(output, true);
+
+	public void pulse(String string, boolean value, long time) {
+		// TODO Auto-generated method stub
+		setDigitalOutput(string,value);
 		ThreadUtil.milliSleep(time);
-		setDigitalOutput(output, false);
+		setDigitalOutput(string,false);
 		ThreadUtil.milliSleep(time);
+		
+		
 	}
 
 }
