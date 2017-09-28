@@ -7,7 +7,7 @@ import com.kuka.common.ThreadUtil;
 import com.kuka.roboticsAPI.controllerModel.Controller;
 import com.kuka.roboticsAPI.ioModel.AbstractIOGroup;
 import com.kuka.roboticsAPI.ioModel.IOTypes;
-
+// updated from github
 /**
  * Automatically generated class to abstract I/O access to I/O group <b>Nikhil_io</b>.<br>
  * <i>Please, do not modify!</i>
