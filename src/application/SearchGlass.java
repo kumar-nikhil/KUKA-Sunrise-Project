@@ -12,10 +12,10 @@ import com.kuka.roboticsAPI.conditionModel.JointTorqueCondition;
 import com.kuka.roboticsAPI.controllerModel.Controller;
 import com.kuka.roboticsAPI.deviceModel.JointEnum;
 import com.kuka.roboticsAPI.deviceModel.LBR;
-import com.kuka.roboticsAPI.geometricModel.Frame;
+//import com.kuka.roboticsAPI.geometricModel.Frame;
 import com.kuka.roboticsAPI.motionModel.MotionBatch;
-import com.kuka.roboticsAPI.motionModel.Spline;
-import com.kuka.generated.ioAccess.Nikhil_ioIOGroup;
+//import com.kuka.roboticsAPI.motionModel.Spline;
+//import com.kuka.generated.ioAccess.Nikhil_ioIOGroup;
 
 
 /**

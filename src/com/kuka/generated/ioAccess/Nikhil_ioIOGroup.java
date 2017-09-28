@@ -536,6 +536,7 @@ public class Nikhil_ioIOGroup extends AbstractIOGroup
 		setDigitalOutput("OUT6", value);
 	}
 	
+<<<<<<< HEAD
 	// User defined Pulse function
 
 		public void pulse(String string, boolean value, long time) {
@@ -547,6 +548,10 @@ public class Nikhil_ioIOGroup extends AbstractIOGroup
 			
 			
 		}
+=======
+	
+	// User defined Pulse function
+>>>>>>> 29b238941ecf907a8831d9735216fb859f989b6e
 
 
 }
