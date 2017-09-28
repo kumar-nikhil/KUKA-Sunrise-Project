@@ -535,15 +535,18 @@ public class Nikhil_ioIOGroup extends AbstractIOGroup
 	{
 		setDigitalOutput("OUT6", value);
 	}
+	
+	// User defined Pulse function
 
-	public void pulse(String string, boolean value, long time) {
-		// TODO Auto-generated method stub
-		setDigitalOutput(string,value);
-		ThreadUtil.milliSleep(time);
-		setDigitalOutput(string,false);
-		ThreadUtil.milliSleep(time);
-		
-		
-	}
+		public void pulse(String string, boolean value, long time) {
+			// TODO Auto-generated method stub
+			setDigitalOutput(string,value);
+			ThreadUtil.milliSleep(time);
+			setDigitalOutput(string,false);
+			ThreadUtil.milliSleep(time);
+			
+			
+		}
+
 
 }
